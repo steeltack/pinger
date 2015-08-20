@@ -1,6 +1,11 @@
 #!/bin/bash
 
-file_path="tester.txt"
+alias clear='printf "\033c"'
+
+file_path="log.txt"
+
+clear
+echo "Pinger Initialized!"
 
 while true; do
    sleep $[ ($RANDOM % 2640) + 60]s
@@ -8,6 +13,11 @@ while true; do
    set best_food to text returned of result
    return best_food')
 
-   echo $(date) >> $file_path
+   date=$(date)
+
+   echo $date >> $file_path
    echo $VALUE >> $file_path
+
+   clear		
+   echo "Last Ping" $date
 done
